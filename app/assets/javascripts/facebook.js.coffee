@@ -19,10 +19,3 @@ window.fbAsyncInit = ->
     FB.getLoginStatus (response) ->
       FB.logout() if response.authResponse
     true
-
-  $(document).bind("fb.loaded", ->
-  FB.getLoginStatus((response)  ->
-    if(response.status == "connected")
-      location.href ="/auth/facebook/callback?#{$.param({ signed_request: response.authResponse.signedRequest })}"))
-
-      
