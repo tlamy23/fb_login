@@ -1,0 +1,12 @@
+%h1 Sessions#index
+%p Find me in app/views/sessions/index.html.erb
+#user-widget
+  - if current_user
+    Welcome
+    = succeed "!" do
+      %strong= current_user.name
+    = link_to "Sign out", signout_path, id: "sign_out"
+  - else
+    = link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in"
+- if @user.present?
+  %a{href: edit_profile_path(@user.profile)} Profile

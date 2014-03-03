@@ -35,6 +35,12 @@ end
 gem 'omniauth'
 gem 'omniauth-facebook'
 
+gem "haml-rails"
+
+group :development do
+	gem 'html2haml'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

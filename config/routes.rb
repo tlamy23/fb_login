@@ -1,5 +1,7 @@
 FbLogin::Application.routes.draw do
 
+  resources :profiles
+
   get "sessions/index"
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   match 'auth/failure', to: redirect('/'), via: [:get, :post]

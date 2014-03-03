@@ -11,12 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140219174613) do
+ActiveRecord::Schema.define(version: 20140225182329) do
+
+  create_table "profiles", force: true do |t|
+    t.string   "email"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.date     "born_date"
+    t.string   "photo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "provider"
     t.string   "uid"
     t.string   "name"
+    t.integer  "profile_id"
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
     t.datetime "created_at"
